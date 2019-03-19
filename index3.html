@@ -20,6 +20,14 @@ window['_fs_namespace'] = 'FS';
     g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
     g.clearUserCookie=function(){};
 })(window,document,window['_fs_namespace'],'script','user');
+
+window['_fs_ready'] = function() {
+	var sessId = FS.getCurrentSession();
+	var contactLink = document.getElementById("contact-link").href;
+	var firstChar = contactLink.indexOf("?") === -1 ? "?" : "&";
+	document.getElementById("contact-link").href = contactLink + firstChar + "fsOrg=" + window['_fs_org'] + "&sessId=" + encodeURIComponent(sessId);
+};
+	
 </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +83,7 @@ window['_fs_namespace'] = 'FS';
 						</ul>
 					</li>
                     <li>
-                        <a href="https://ian0608.github.io/fstesting/">Contact</a>
+                        <a id="contact-link" href="https://ian0608.github.io/fstesting/">Contact</a>
                     </li>
                 </ul>
                 
