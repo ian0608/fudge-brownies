@@ -59,10 +59,10 @@ window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){va
 	window.doCxCheck = function(e){
 		console.log("I'm doing the CX check now");
 		var oReq = new XMLHttpRequest();
+		oReq.open("GET", "https://ian0608.github.io/fudge-brownies/");
 		oReq.setRequestHeader("TransactionId", "my-transaction-id");
 		oReq.setRequestHeader("NotTransactionId", "should-be-redacted");
 		oReq.addEventListener("load", function() {console.log(this.responseText);});
-		oReq.open("GET", "https://ian0608.github.io/fudge-brownies/");
 		oReq.send();
 	}
 </script>
